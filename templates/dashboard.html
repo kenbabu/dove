@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>Dashboard <small>Welcome {{session.username | title }}</small></h1>
+<table class="table table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Chem ID</th>
+        <th>DrugBank ID</th>
+        <th>Original Indication</th>
+        <th>New Indication</th>
+        <th>Pubmed ID</th>
+        <th>Website</th>
+
+    </tr>
+    {% for drug in drugs %}
+    <tr>
+        <td>{{drug.name}}</td>
+        <td>{{drug.chem_id | upper}}</td>
+        <td>{{drug.drugbank_id}}</td>
+        <td>{{drug.org_indication}}</td>
+        <td>{{drug.new_indication}}</td>
+        <td>{{drug.pubmed_id}}</td>
+        <td>{{drug.website}}</td>
+        <td> <a href="edit_drug/{{ drug._id }}" class="btn btn-default btn-small pull-right">Edit</a></td>
+        <td> <a href="delete_drug/{{ drug._id }}" class="btn btn-danger btn-small ">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>Add Drug to the Database</h1>
+{% from "includes/_formhelpers.html" import render_field %}
+<form action="" method="POST">
+    <div class="form-group">
+        {{render_field(form.name, class_="form-control")}}
+    </div>
+    <div class="form-group">
+        {{render_field(form.chem_id, class_="form-control")}}
+    </div>
+    <div class="form-group">
+        {{render_field(form.drugbank_id, class_="form-control")}}
+    </div>
+    <div class="form-group">
+        {{render_field(form.org_indication, class_="form-control")}}
+    </div>
+    <div class="form-group">
+        {{render_field(form.new_indication, class_="form-control")}}
+    </div>
+    <div class="form-group">
+        {{render_field(form.evidence, class_="form-control")}}
+    </div>
+    <div class="form-group">
+        {{render_field(form.pubmed_id, class_="form-control")}}
+    </div>
+    <div class="form-group">
+        {{render_field(form.website, class_="form-control")}}
+    </div>
+    <div class="form-group">
+        {{render_field(form.additional_info, class_="form-control")}}
+    </div>
+    <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+
+</form>
+{% endblock %}
