@@ -161,7 +161,11 @@ def addDrug():
         flash("New drug saved", "success")
         return  redirect(url_for('dashboard'))
     return render_template('repurpose.html', form=form)
-
+@app.route('/edit_drug')
+@is_logged_in
+def editDrugs():
+	return render_template('dashboard.html')
+	
 @app.route('/edit_drug/<string:id>', methods=('GET','POST'))
 @is_logged_in
 def editDrug(id):
